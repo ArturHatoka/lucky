@@ -10,10 +10,21 @@
       <router-view />
     </v-main>
 
-    <footer>
+    <footer v-if="switcher">
       <a href="/" class="logo__wrapper">
         <img alt="logo" class="logo" src="./assets/logo.webp" width="494" height="244">
       </a>
     </footer>
   </v-app>
 </template>
+<script setup lang="ts">
+import {onMounted, ref} from "vue";
+
+let switcher = ref(false)
+
+onMounted(() => {
+  setTimeout(() => {
+    switcher.value = true
+  }, 200)
+})
+</script>

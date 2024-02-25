@@ -75,7 +75,7 @@ footer .logo__wrapper {
     display: flex;
     flex-direction: column;
     padding: 28px 24px;
-    min-height: 600px;
+    min-height: 620px;
   }
 }
 
@@ -136,6 +136,9 @@ footer .logo__wrapper {
     text-align: center;
     width: 100%;
     padding-bottom: 24px;
+  }
+  &__wrapper {
+    min-height: 1020px;
   }
 }
 
