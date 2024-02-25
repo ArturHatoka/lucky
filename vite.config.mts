@@ -4,6 +4,7 @@ import Vuetify, {transformAssetUrls} from 'vite-plugin-vuetify'
 import ViteFonts from 'unplugin-fonts/vite'
 import VueRouter from 'unplugin-vue-router/vite'
 import VitePurgecss from 'vite-plugin-purgecss'
+import viteCompression from 'vite-plugin-compression'
 
 import {defineConfig} from 'vite'
 import {fileURLToPath, URL} from 'node:url'
@@ -22,12 +23,13 @@ export default defineConfig({
     }),
     Components(),
     ViteFonts(),
+    viteCompression({algorithm: 'brotliCompress'}),
     VitePurgecss({
       content: [
         './index.html',
         './src/**/*.vue',
         './src/**/*.js',
-      ],
+      ]
     })
   ],
   define: { 'process.env': {} },
