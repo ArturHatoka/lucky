@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import {onBeforeMount, onMounted, Ref, ref} from "vue";
+import {onBeforeMount, Ref, ref} from "vue";
 import Categories from "@/components/Categories.vue";
 import Posts from "@/components/Posts.vue";
 

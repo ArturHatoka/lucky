@@ -35,7 +35,3 @@ interface Category {
   description: string
 }
 </script>
-<style scoped lang="sass">
-
-
-</style>
