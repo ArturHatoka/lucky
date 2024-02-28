@@ -8,7 +8,8 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import Post from "@/components/Post.vue";
-import {onBeforeMount, ref, Ref} from "vue";
+import {computed, onBeforeMount, ref, Ref} from "vue";
+import {useHead} from "@vueuse/head";
 
 const route = useRoute();
 const postId = route.params.postId;
@@ -33,6 +34,20 @@ onBeforeMount(() => {
     return res.json()
   }).then(({data}) => {
     post.value = data
+
+    useHead({
+      title: computed(()=> data.title + ` | Lucky Beauty`),
+      meta: [
+        {
+          name: `description`,
+          content: computed(() => data.description),
+        },
+        {
+          name: `keywords`,
+          content: computed(() => data.keywords.join(', ')),
+        },
+      ],
+    })
   }).catch((err) => {
     console.error(err)
   })
