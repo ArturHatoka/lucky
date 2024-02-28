@@ -5,9 +5,10 @@
   </Posts>
 </template>
 <script setup lang="ts">
-import {onBeforeMount, Ref, ref} from "vue";
+import {computed, onBeforeMount, Ref, ref} from "vue";
 import {useRoute} from 'vue-router';
 import Posts from "@/components/Posts.vue";
+import {useHead} from "@vueuse/head";
 
 const route = useRoute();
 const categoryId = route.params.categoryId;
@@ -45,6 +46,20 @@ onBeforeMount(() => {
       postsTemp.push(post.post_id)
       return postsTemp
     }, [])
+
+    useHead({
+      title: computed(()=> data.title + ` | Lucky Beauty`),
+      meta: [
+        {
+          name: `description`,
+          content: computed(() => data.description),
+        },
+        {
+          name: `keywords`,
+          content: computed(() => data.keywords.join(', ')),
+        },
+      ],
+    })
   }).catch((err) => {
     console.error(err)
   })

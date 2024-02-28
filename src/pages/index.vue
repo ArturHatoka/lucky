@@ -9,9 +9,10 @@
 </template>
 
 <script lang="ts" setup>
-import {onBeforeMount, Ref, ref} from "vue";
+import {computed, onBeforeMount, Ref, ref} from "vue";
 import Categories from "@/components/Categories.vue";
 import Posts from "@/components/Posts.vue";
+import {useHead} from "@vueuse/head";
 
 interface Post {
   id: number
@@ -53,6 +54,19 @@ onBeforeMount(() => {
       postsTemp.push(post.post_id)
       return postsTemp
     }, [])
+    useHead({
+      title: 'Lucky Beauty',
+      meta: [
+        {
+          name: `description`,
+          content: computed(() => data[0].description),
+        },
+        {
+          name: `keywords`,
+          content: computed(() => data[0].keywords.join(', ')),
+        },
+      ],
+    })
   }).catch((err) => {
     console.error(err)
   })
