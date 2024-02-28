@@ -28,3 +28,4 @@ onMounted(() => {
   }, 400)
 })
 </script>
+<style src="src/styles/mains.scss"/>
