@@ -25,6 +25,6 @@ let switcher = ref(false)
 onMounted(() => {
   setTimeout(() => {
     switcher.value = true
-  }, 200)
+  }, 400)
 })
 </script>
