@@ -3,6 +3,9 @@
     <h1 class="post__title">{{ title }}</h1>
     <span class="post__date">{{ getDate }}</span>
     <div class="post__content" v-html="content"/>
+    <ul style="display:none;">
+      <li></li>
+    </ul>
   </v-container>
 </template>
 <script setup lang="ts">
