@@ -75,6 +75,7 @@ footer .logo__wrapper {
     display: flex;
     flex-direction: column;
     padding: 28px 24px;
+    min-height: 512px;
   }
 }
 
@@ -136,6 +137,9 @@ footer .logo__wrapper {
     width: 100%;
     padding-bottom: 24px;
   }
+  &__wrapper {
+    min-height: 1020px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -151,6 +155,7 @@ footer .logo__wrapper {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
+      min-height: 620px;
     }
   }
   .posts {

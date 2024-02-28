@@ -13,7 +13,7 @@ import {onBeforeMount, ref, Ref} from "vue";
 const route = useRoute();
 const postId = route.params.postId;
 
-interface Post {
+interface IPost {
   date_created: string
   date_updated: string
   id: number
@@ -26,7 +26,7 @@ interface Post {
   keywords: string
 }
 
-const post: Ref<Post> = ref({} as Post);
+const post: Ref<IPost> = ref({} as IPost);
 
 onBeforeMount(() => {
   fetch(`https://postapi.fiery.host/items/post/${postId}`).then((res) => {

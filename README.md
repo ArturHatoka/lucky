@@ -58,6 +58,9 @@ To build your project for production, use:
 ```bash
 yarn build
 ```
+```to test
+yarn preview
+```
 
 (Repeat for npm, pnpm, and bun with respective commands.)
 

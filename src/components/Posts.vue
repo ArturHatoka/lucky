@@ -2,7 +2,7 @@
   <v-container class="posts__wrapper">
     <h2 class="posts__header">{{title}}</h2>
     <router-link
-      v-for="(post, idx) of posts"
+      v-for="(post, idx) of props.posts"
       :key="idx"
       :to="`/post/`+post.id"
       class="posts"
