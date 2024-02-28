@@ -2,7 +2,7 @@
   <v-app>
     <header>
       <a href="/" class="logo__wrapper">
-        <img alt="logo" class="logo" src="./assets/logo.webp" width="494" height="244">
+        <img fetchpriority="high" alt="logo" class="logo" src="./assets/logo.webp" width="494" height="244">
       </a>
     </header>
 
@@ -12,7 +12,7 @@
 
     <footer v-if="switcher">
       <a href="/" class="logo__wrapper">
-        <img alt="logo" class="logo" src="./assets/logo.webp" width="494" height="244">
+        <img fetchpriority="high" alt="logo" class="logo" src="./assets/logo.webp" width="494" height="244">
       </a>
     </footer>
   </v-app>

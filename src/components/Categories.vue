@@ -1,7 +1,7 @@
 <template>
   <v-container class="category__wrapper">
     <router-link
-      v-for="(cat, idx) of categories"
+      v-for="(cat, idx) of props.categories"
       :key="idx"
       :style="`background-image: url('https://postapi.fiery.host/assets/${cat.img}');`"
       :to="`/category/`+cat.id"
